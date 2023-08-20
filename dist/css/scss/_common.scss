@@ -1,0 +1,100 @@
+.section {
+  margin: 100px 0;
+}
+
+.main {
+  padding: 100px 0;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.frontLable {
+  font-family: $lable-font;
+  font-size: $lable-font-size;
+  color: $brand-color;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.frontLable::after {
+  font-family: $lable-font;
+  font-size: $lable-back-font-size;
+  color: rgba(253, 253, 253, 0.04);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+// .btn {
+//     width: 200px;
+//     height: 60px;
+//     border: 2px solid $brand-color;
+//     border-radius: 50px;
+//     @include flex (row,space-between,center,0);
+//     .btn-text {
+//         font-family: $para-font;
+//         font-size: 13px;
+//         color: $brand-color;
+//         @include flex (row,center,center,0);
+//         text-align: center;
+//         text-transform: uppercase;
+//     }
+//     .circle-container{
+//         width: 60px; /* Adjust the width and height as needed */
+//         height: 60px;
+//         border-radius: 50%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         background-color: $brand-color;
+//     }
+// }
+
+// .btn-text {
+//     font-family: $para-font;
+//     font-size: 13px;
+//     color: $brand-color;
+//     @include flex (row,center,center,0);
+//     text-align: center;
+//     text-transform: uppercase;
+// }
+
+.btn {
+  width: 200px;
+  height: 60px;
+  display: inline-block;
+  background-color: $text-color;
+  color: $brand-color;
+  padding: 8px 30px;
+  text-decoration: none;
+  border: 2px solid $brand-color;
+  border-radius: 50px;
+  font-family: $para-font;
+  font-size: 13px;
+  position: relative;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 100%;
+  background-color: $brand-color;
+  color: #fdfdfd;
+  top: 0;
+  right: 0;
+  border-radius: 50px;
+  z-index: -1;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
